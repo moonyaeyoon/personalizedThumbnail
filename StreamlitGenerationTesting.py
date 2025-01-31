@@ -1,6 +1,7 @@
 import streamlit as st
 import torch
 import os
+from dotenv import load_dotenv
 import json
 from PIL import Image
 
@@ -277,7 +278,7 @@ def main():
 
     # === (B) OpenAI API Key input ===
     api_key = st.text_input("Please enter your OpenAI API Key here:", 
-                            value ="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",
+                            value =os.getenv("OPENAI_API_KEY"),
                             type="password")
 
     # === (C) Scenario input ===
